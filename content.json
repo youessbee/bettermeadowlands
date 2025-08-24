@@ -1,0 +1,122 @@
+{
+  "Format": "2.7.5",
+
+  "Changes": [
+    // add farm type
+    {
+      "Action": "EditData",
+      "Target": "Data/AdditionalFarms",
+      "Entries": {
+        "BetterMeadowlandsFarm": { // for technical reasons, you need to specify the ID here *and* in the 'ID' field
+          "ID": "BetterMeadowlandsFarm",
+          "TooltipStringPath": "Strings/UI:BetterMeadowlandsFarm",
+          "MapName": "BetterMeadowlandsFarm",
+          "IconTexture": "Mods/BetterMeadowlandsFarm/Icon",
+          "WorldMapTexture": "Mods/BetterMeadowlandsFarm/WorldMap"
+        }
+      }
+    },
+
+    // add farm name + description
+    {
+      "Action": "EditData",
+      "Target": "Strings/UI",
+      "Entries": {
+        "BetterMeadowlandsFarm": "Better Meadowlands Farm_There is a small pond close to the main farming area outside the farmhouse. It has a chewy blue grass that animals love. You start with two chickens." // tip: use {{i18n}} to translate it
+      }
+    },
+
+    // load map
+    {
+      "Action": "Load",
+      "Target": "Maps/BetterMeadowlandsFarm",
+      "FromFile": "assets/Farm_Ranching.tmx"
+    },
+
+    // load icon and map
+    {
+      "Action": "Load",
+      "Target": "Mods/BetterMeadowlandsFarm/Icon, Mods/BetterMeadowlandsFarm/WorldMap", 
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+
+    // add coop
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/FarmExtensionData",
+      "Entries": {
+        "BetterMeadowlandsFarm": {
+          "Buildings": [
+            {
+              "Id": "Default Coop",
+              "Type": "Coop",
+              "Position": "54, 9",
+              "Animals": {
+                "Cream": "White Chicken",
+                "Cookies": "Brown Chicken"
+              }
+            }
+          ],
+          // add fences
+          "Fences": [
+            {
+              "Id": "RightFence",
+              "FenceId": "322", //wood fence = 322, stone fence = 323, iron fence = 324, hardwood fence = 298, gate = 325
+              "Area": {
+                "X": 62,
+                "Y": 7,
+                "Width": 1,
+                "Height": 14
+              },
+              "IsGate": false
+            },
+            {
+              "Id": "BottomFence",
+              "FenceId": "322", //wood fence = 322, stone fence = 323, iron fence = 324, hardwood fence = 298, gate = 325
+              "Area": {
+                "X": 47,
+                "Y": 20,
+                "Width": 15,
+                "Height": 1
+              },
+              "IsGate": false
+            },
+            {
+              "Id": "LeftFence",
+              "FenceId": "322", //wood fence = 322, stone fence = 323, iron fence = 324, hardwood fence = 298, gate = 325
+              "Area": {
+                "X": 47,
+                "Y": 16,
+                "Width": 1,
+                "Height": 4
+              },
+              "IsGate": false
+            },
+            {
+              "Id": "Gate",
+              "FenceId": "325",
+              "Area": {
+                "X": 62,
+                "Y": 13,
+                "Width": 1,
+                "Height": 1
+              },
+              "IsGate": true
+            }
+          ]
+        }
+      }
+    },
+    // make egg quest instead of parsnip quest
+    {
+      "Action": "EditData",
+      "Target": "Data/Quests",
+      "Entries": {
+        "6": "ItemHarvest/Getting Started/If you want to become a farmer, you have to start with the basics. Feed your chickens each day by letting them eat grass outside, or by placing hay into their troughs. Once they are mature, harvest an egg!/Harvest an egg from your chickens./-5/h8 133/100/-1/true"
+      },
+      "When": {
+        "FarmType": "BetterMeadowlandsFarm"
+      }
+    }
+  ]
+}

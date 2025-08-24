@@ -1,0 +1,11 @@
+{
+  "Name": "Better Meadowlands Farm",
+  "Author": "your name",
+  "Version": "1.0.0",
+  "Description": "A better meadowlands farm.",
+  "UniqueID": "BetterMeadowlandsFarm",
+  "UpdateKeys": [ "Nexus:???" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+}
