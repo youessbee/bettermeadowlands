@@ -1,9 +1,9 @@
 {
   "Name": "Better Meadowlands Farm",
-  "Author": "your name",
+  "Author": "colourpencilsgirl",
   "Version": "1.0.0",
   "Description": "A better meadowlands farm.",
-  "UniqueID": "BetterMeadowlandsFarm",
+  "UniqueID": "colourpencilsgirl.BetterMeadowlandsFarm",
   "UpdateKeys": [ "Nexus:???" ],
   "ContentPackFor": {
     "UniqueID": "Pathoschild.ContentPatcher"
