@@ -33,11 +33,51 @@
       "FromFile": "assets/Farm_Ranching.tmx"
     },
 
-    // load icon and map
+    // load icon
     {
       "Action": "Load",
-      "Target": "Mods/BetterMeadowlandsFarm/Icon, Mods/BetterMeadowlandsFarm/WorldMap", 
-      "FromFile": "assets/{{TargetWithoutPath}}.png"
+      "Target": "Mods/BetterMeadowlandsFarm/Icon",
+      "FromFile": "assets/Icon.png"
+    },
+
+    // load world map in spring
+    {
+      "Action": "Load",
+      "Target": "Mods/BetterMeadowlandsFarm/WorldMap",
+      "FromFile": "assets/WorldMapSpring.png",
+      "When": {
+        "Season": "Spring"
+      }
+    },
+
+    //load world map in summer
+    {
+      "Action": "Load",
+      "Target": "Mods/BetterMeadowlandsFarm/WorldMap",
+      "FromFile": "assets/WorldMapSummer.png",
+      "When": {
+        "Season": "Summer"
+      }
+    },
+
+    //load world map in fall
+    {
+      "Action": "Load",
+      "Target": "Mods/BetterMeadowlandsFarm/WorldMap",
+      "FromFile": "assets/WorldMapFall.png",
+      "When": {
+        "Season": "Fall"
+      }
+    },
+
+    //load world map in winter
+    {
+      "Action": "Load",
+      "Target": "Mods/BetterMeadowlandsFarm/WorldMap",
+      "FromFile": "assets/WorldMapWinter.png",
+      "When": {
+        "Season": "Winter"
+      }
     },
 
     // add coop
